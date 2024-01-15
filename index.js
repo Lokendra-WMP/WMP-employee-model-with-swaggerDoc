@@ -20,7 +20,7 @@ const options = {
       },
     ],
   },
-  apis: ['./Routes/employee.js'], // Path to the Swagger API routes
+  apis: ['./swagger.js'], // Path to the Swagger API routes
 };
 
 // Middleware to destructure body
@@ -28,7 +28,7 @@ app.use(bodyParser.json());
 
 // Generate Swagger documentation
 const swaggerSpec = swaggerDoc(options);
-
+//
 // Serve Swagger documentation at /api-docs
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerSpec));
 
